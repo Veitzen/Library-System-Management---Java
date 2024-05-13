@@ -1,5 +1,6 @@
 package mainClass;
 
+import java.beans.PropertyChangeEvent;
 import java.time.Duration;
 import java.util.Date;
 
@@ -67,7 +68,7 @@ public class Borrow {
 		this.duration = this.duration.plus(extendTime);
 		numExtendReturn++;
 		extendDuration.plus(extendTime);
-		library.getPcs().firePropertyChange(null);
+		library.getPcs().firePropertyChange(new PropertyChangeEvent(this, "Borrow Time extension", duration.minus(extendTime), duration));
 	}
 	
 }

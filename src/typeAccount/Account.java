@@ -23,6 +23,66 @@ public class Account {
 		this.dateRegistration = Date.from(null);
 	}
 	
+	//Getters and Setters
+	
+	public Library getLibrary() {
+		return library;
+	}
+
+	public void setLibrary(Library library) {
+		this.library = library;
+	}
+
+	public static int getIdUser() {
+		return idUser;
+	}
+
+	public static void setIdUser(int idUser) {
+		Account.idUser = idUser;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getMailAdress() {
+		return mailAdress;
+	}
+
+	public void setMailAdress(String mailAdress) {
+		this.mailAdress = mailAdress;
+	}
+
+	public Date getDateRegistration() {
+		return dateRegistration;
+	}
+
+	public void setDateRegistration(Date dateRegistration) {
+		this.dateRegistration = dateRegistration;
+	}
+	
+	// Features
+	
 	public boolean connect(String password){
 		if(this.password != password) {
 			return false;

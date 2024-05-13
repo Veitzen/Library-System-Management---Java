@@ -30,6 +30,40 @@ public class Library {
     public void removePropertyChangeListener(PropertyChangeListener listener) {
         this.pcs.removePropertyChangeListener(listener);
     }
+    
+    // Getters and Setters
+    
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public List<Account> getAccountList() {
+		return accountList;
+	}
+
+	public void setAccountList(List<Account> accountList) {
+		this.accountList = accountList;
+	}
+
+	public List<Resource> getResourceList() {
+		return resourceList;
+	}
+
+	public void setResourceList(List<Resource> resourceList) {
+		this.resourceList = resourceList;
+	}
+
+	public List<StudyRoom> getRoomList() {
+		return roomList;
+	}
+
+	public void setRoomList(List<StudyRoom> roomList) {
+		this.roomList = roomList;
+	}
 	
     // Constructor
 	public Library(String name) {
@@ -38,4 +72,5 @@ public class Library {
 		resourceList = new ArrayList<Resource>();
 		roomList = new ArrayList<StudyRoom>();
 	}
+
 }
