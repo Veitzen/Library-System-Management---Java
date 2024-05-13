@@ -4,6 +4,8 @@ import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 
 import javafx.application.Application;
+import javafx.fxml.FXML;
+import javafx.scene.input.MouseEvent;
 import mainClass.Library;
 import view.ViewLibrary;
 
@@ -24,6 +26,13 @@ public class LibraryController implements PropertyChangeListener {
 		// TODO Auto-generated method stub
 		
 	}
+	
+	// Manage View Commands
+	
+    @FXML
+    void connect(MouseEvent event) {
+    	System.out.println("Clicked");
+    }
 	
 	public static void main(String[] args) {
 		LibraryController controller = new LibraryController();
