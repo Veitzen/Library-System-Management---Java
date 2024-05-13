@@ -2,7 +2,11 @@ package typeAccount;
 
 import java.util.Date;
 
+import mainClass.Library;
+
 public class Account {
+	private Library library;
+	
 	private static int idUser;
 	private String username;
 	private String password;

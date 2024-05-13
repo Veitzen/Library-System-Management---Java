@@ -3,6 +3,8 @@ package mainClass;
 import java.util.Date;
 
 public class Fine {
+	private Library library;
+	
 	private double amount;
 	private boolean isPaid;
 	private Date dateFineCreated;

@@ -2,7 +2,11 @@ package resources;
 
 import java.util.Date;
 
+import mainClass.Library;
+
 public class Resource {
+	private Library library;
+	
 	// Basic informations about a resource
 	private String title;
 	private String author;

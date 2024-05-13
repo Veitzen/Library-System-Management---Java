@@ -9,6 +9,8 @@ import resources.Resource;
 import typeAccount.User;
 
 public class Borrow {
+	private Library library;
+	
 	private User user;
 	private Resource resource;
 	private Date dateReservation;
@@ -55,7 +57,6 @@ public class Borrow {
 	}
 	
 	// Methods - Features
-	
 	public void extendDuration(Duration extendTime) throws Exception {
 		if(this.numExtendReturn > 2) {
 			throw new ENExtendException();
@@ -66,6 +67,7 @@ public class Borrow {
 		this.duration = this.duration.plus(extendTime);
 		numExtendReturn++;
 		extendDuration.plus(extendTime);
+		library.getPcs().firePropertyChange(null);
 	}
 	
 }

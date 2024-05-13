@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class StudyRoom {
+	private Library library;
+	
 	private static int idRoom;
 	private int capacity;
 	private boolean isAvailable;
