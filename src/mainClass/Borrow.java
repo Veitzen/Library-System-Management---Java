@@ -19,6 +19,15 @@ public class Borrow {
 	private int numExtendReturn;
 	private Duration extendDuration;
 	
+	/**
+	 * Maximal number of DAYS for a borrow.
+	 */
+	private final int MAX_DURATION_TIME = 60;
+	/**
+	 * Maximal number of extension for a borrow.
+	 */
+	private final int MAX_NUMBER_EXTENSION = 2;
+	
 	//Getters and Setters
 	public User getUser() {
 		return user;
@@ -59,10 +68,10 @@ public class Borrow {
 	
 	// Methods - Features
 	public void extendDuration(Duration extendTime) throws Exception {
-		if(this.numExtendReturn > 2) {
+		if(this.numExtendReturn > MAX_NUMBER_EXTENSION) {
 			throw new ENExtendException();
 		}
-		if(this.extendDuration.plus(extendTime).compareTo(Duration.ofDays(62)) > 0) {
+		if(this.extendDuration.plus(extendTime).compareTo(Duration.ofDays(MAX_DURATION_TIME)) > 0) {
 			throw new DurationExtendException();
 		}
 		this.duration = this.duration.plus(extendTime);
