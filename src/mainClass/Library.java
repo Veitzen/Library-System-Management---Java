@@ -5,8 +5,10 @@ import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
 import java.util.List;
 
+import exceptions.AccountNotFoundExcepetion;
 import resources.Resource;
 import typeAccount.Account;
+import typeAccount.User;
 
 public class Library {
 	
@@ -71,6 +73,20 @@ public class Library {
 		accountList = new ArrayList<Account>();
 		resourceList = new ArrayList<Resource>();
 		roomList = new ArrayList<StudyRoom>();
+		
+		// Test
+		this.accountList.add(new User("user", "password", "nameUser", "mail@example.com"));
+	}
+	
+	// Methods
+	
+	public Account getUserbyUsername(String username) throws Exception {
+		for(Account account : accountList) {
+			if(account.getUsername().equals(username)) {
+				return account;
+			}
+		}
+		throw new AccountNotFoundExcepetion();
 	}
 
 }

@@ -34,32 +34,41 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.PasswordField?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
 <VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LibraryController">
   <children>
-    <AnchorPane id="rf" maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
       <children>
-        <Label alignment="CENTER" layoutX="207.0" layoutY="37.0" style="&#10;" text="Library System Management" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
+        <Label alignment="CENTER" layoutX="223.0" layoutY="27.0" style="&#10;" text="typeAccount - username" textAlignment="CENTER" textFill="#9f9f9f" wrapText="false">
           <font>
             <Font size="18.0" />
           </font>
         </Label>
-            <Label alignment="CENTER_RIGHT" layoutX="162.0" layoutY="143.0" nodeOrientation="RIGHT_TO_LEFT" text="Username">
-               <graphic>
-                  <TextField prefHeight="25.0" prefWidth="208.0" promptText="username"  fx:id="usernameField"/>
-               </graphic>
-            </Label>
-            <Label layoutX="163.0" layoutY="174.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="25.0" prefWidth="267.0" text="Password">
-               <graphic>
-                  <PasswordField prefHeight="25.0" prefWidth="210.0" promptText="password" fx:id="passwordField"/>
-               </graphic>
-            </Label>
-            <Button layoutX="374.0" layoutY="213.0" mnemonicParsing="false" onMouseClicked="#connect" text="Connect" />
+            <GridPane layoutX="170.0" layoutY="155.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button mnemonicParsing="false" text="Button" />
+                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" />
+                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="2" />
+                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
       </children>
     </AnchorPane>
   </children>

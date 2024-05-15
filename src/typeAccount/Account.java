@@ -1,5 +1,6 @@
 package typeAccount;
 
+import java.time.Instant;
 import java.util.Date;
 
 import mainClass.Library;
@@ -20,7 +21,7 @@ public class Account {
 		this.password = password;
 		this.name = name;
 		this.mailAdress = mailAdress;
-		this.dateRegistration = Date.from(null);
+		this.dateRegistration = Date.from(Instant.now());
 	}
 	
 	//Getters and Setters
@@ -84,9 +85,9 @@ public class Account {
 	// Features
 	
 	public boolean connect(String password){
-		if(this.password != password) {
-			return false;
+		if(this.password.equals(password)) {
+			return true;
 		}
-		return true;
+		return false;
 	}
 }

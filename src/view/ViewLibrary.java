@@ -35,7 +35,7 @@ public class ViewLibrary extends Application {
     
     // Pane and Stage
 	private Pane rootLayout;
-	private Stage primaryStage;
+	private static Stage primaryStage;
 
 	@Override
 	public void start(Stage primaryStage) throws Exception {
@@ -43,7 +43,7 @@ public class ViewLibrary extends Application {
         this.primaryStage.setTitle("Connection Page");
         
         this.initRootLayout();
-        primaryStage.show();
+        this.primaryStage.show();
 	}
 	
 	public void initRootLayout() {
@@ -59,6 +59,18 @@ public class ViewLibrary extends Application {
             e.printStackTrace();
         }
     }
+	
+	public void changeLayout(String fxmlFile) {
+		try {
+			FXMLLoader loader = new FXMLLoader();
+	        loader.setLocation(ViewLibrary.class.getResource("fxml/"+fxmlFile));
+	        rootLayout = loader.load();
+	        Scene scene = new Scene(rootLayout);
+	        primaryStage.setScene(scene);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	public void startUI(String[] args) {
 		launch(args);
