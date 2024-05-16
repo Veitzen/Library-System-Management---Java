@@ -6,6 +6,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.io.IOException;
 
+import controller.LibraryController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -40,7 +41,6 @@ public class ViewLibrary extends Application {
 	@Override
 	public void start(Stage primaryStage) throws Exception {
 		this.primaryStage = primaryStage;
-        this.primaryStage.setTitle("Connection Page");
         
         this.initRootLayout();
         this.primaryStage.show();
@@ -54,26 +54,37 @@ public class ViewLibrary extends Application {
             rootLayout = loader.load();
             // Show the scene containing the root layout.
             Scene scene = new Scene(rootLayout);
+            this.primaryStage.setTitle("Connection Page");
             primaryStage.setScene(scene);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 	
-	public void changeLayout(String fxmlFile) {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-	        loader.setLocation(ViewLibrary.class.getResource("fxml/"+fxmlFile));
-	        rootLayout = loader.load();
-	        Scene scene = new Scene(rootLayout);
-	        primaryStage.setScene(scene);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public void changeLayout(Pane newLayout) {
+	      Scene scene = new Scene(newLayout);
+	      primaryStage.setScene(scene);
+
 	}
 	
 	public void startUI(String[] args) {
 		launch(args);
+	}
+
+	public Pane getRootLayout() {
+		return rootLayout;
+	}
+
+	public void setRootLayout(Pane rootLayout) {
+		this.rootLayout = rootLayout;
+	}
+
+	public static Stage getPrimaryStage() {
+		return primaryStage;
+	}
+
+	public static void setPrimaryStage(Stage primaryStage) {
+		ViewLibrary.primaryStage = primaryStage;
 	}
 	
 }
